@@ -28,6 +28,9 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `bebidas`
 --
 
+create database restauranteproyecto;
+use restauranteproyecto;
+
 CREATE TABLE `bebidas` (
   `idBebida` int(11) NOT NULL,
   `nombreB` varchar(250) NOT NULL,

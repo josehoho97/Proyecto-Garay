@@ -1,88 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include "./assets/head.php" ?>
-
 <body>
     <?php include "./assets/navbar.php" ?>
     <div class="container">
-        <img src="img/logo.png" class="img-fluid p-2" width="100px">
-        <form class="card p-3">
+        <div class="row p-3 pt-5 pb-5">
+            <img src="img/logo.png" class="img-fluid mr-5" width="80px">
+            <div class="display-4">Registro</div>
+        </div>
+        <form action="scripts/guardaCliente.php" method="POST" class="p-3 mb-5">
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+                <label for="nom" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="nom" placeholder="Nombre">
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nombre">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Apellido Paterno</label>
+                <label for="app" class="col-sm-2 col-form-label">Apellido Paterno</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="app" placeholder="Apellido Paterno">
+                    <input type="text" class="form-control" name="app" id="app" placeholder="Apellido Paterno">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Apellido Materno</label>
+                <label for="apm" class="col-sm-2 col-form-label">Apellido Materno</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" id="apm" placeholder="Apellido Materno">
+                    <input type="text" class="form-control" name="apm" id="apm" placeholder="Apellido Materno">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <label for="nomUsr" class="col-sm-2 col-form-label">Nombre de Usuario</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="text" class="form-control" name="nomUsr" id="nomUsr" placeholder="Nombre de Usuario">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                <label for="tel" class="col-sm-2 col-form-label">Telefono</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
-                </div>
-            </div>
-            <fieldset class="form-group">
-                <div class="row">
-                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                    <label class="form-check-label" for="gridRadios1">
-                        First radio
-                    </label>
-                    </div>
-                    <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                    <label class="form-check-label" for="gridRadios2">
-                        Second radio
-                    </label>
-                    </div>
-                    <div class="form-check disabled">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                    <label class="form-check-label" for="gridRadios3">
-                        Third disabled radio
-                    </label>
-                    </div>
-                </div>
-                </div>
-            </fieldset>
-            <div class="form-group row">
-                <div class="col-sm-2">Checkbox</div>
-                <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                    Example checkbox
-                    </label>
-                </div>
+                    <input type="number" class="form-control" name="tel" id="tel" placeholder="Telefono">
                 </div>
             </div>
             <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Terminar Registro</button>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                 </div>
             </div>
-            </form>
+            <div class="form-group row">
+                <label for="pass" class="col-sm-2 col-form-label">Contraseña</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña">
+                </div>
+            </div>
+            <div class="form-group row mt-5">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Terminar Registro</button>
+                </div>
+            </div>
+        </form>
     </div>
-
-
     <?php include "./assets/footer.php" ?>
     <script src="vendor/Jquery/jquery-2.2.4.min.js"></script>
     <script src="vendor/Bootstrap/js/bootstrap.min.js"></script>

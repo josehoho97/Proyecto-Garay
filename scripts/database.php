@@ -8,12 +8,7 @@ class Database
 	private $server = "mysql:host=localhost; dbname=restauranteproyecto";
 
 	function conectarBD(){
-		try{
-			$this->PDOLocal = new PDO($this->server,$this->user,$this->password);
-		}
-		catch(PDOException $e){
-			echo $e->getMessage();
-		}
+		$this->PDOLocal = new PDO($this->server,$this->user,$this->password);
 	}
 
 	function desconectarBD(){
