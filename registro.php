@@ -10,45 +10,45 @@
         </div>
         <form action="scripts/guardaCliente.php" method="POST" class="p-3 mb-5">
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+                <label for="nom" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Nombre">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Apellido Paterno</label>
+                <label for="app" class="col-sm-2 col-form-label">Apellido Paterno</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="app" placeholder="Apellido Paterno">
+                    <input type="text" class="form-control" name="app" id="app" placeholder="Apellido Paterno">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Apellido Materno</label>
+                <label for="apm" class="col-sm-2 col-form-label">Apellido Materno</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="apm" placeholder="Apellido Materno">
+                    <input type="text" class="form-control" name="apm" id="apm" placeholder="Apellido Materno">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre de Usuario</label>
+                <label for="nomUsr" class="col-sm-2 col-form-label">Nombre de Usuario</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nomUsr" placeholder="Nombre de Usuario">
+                    <input type="text" class="form-control" name="nomUsr" id="nomUsr" placeholder="Nombre de Usuario">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Telefono</label>
+                <label for="tel" class="col-sm-2 col-form-label">Telefono</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control" id="tel" placeholder="Telefono">
+                    <input type="number" class="form-control" name="tel" id="tel" placeholder="Telefono">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                <label for="pass" class="col-sm-2 col-form-label">Contraseña</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="pass" placeholder="Contraseña">
+                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña">
                 </div>
             </div>
             <div class="form-group row mt-5">

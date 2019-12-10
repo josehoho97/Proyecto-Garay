@@ -5,16 +5,21 @@
 <?php
 include '../assets/head.php';
 include 'database.php';
-$db = new Database();
-$db->conectarBD();
-extract($_POST);
+try{
+  $db = new Database();
+  $db->conectarBD();
+  extract($_POST);
+  
+  $cadena = "INSERT INTO cliente(nomUsuarioC,nombresC,apPatC,apMatC,telefonoC,correoC,contraseñaC,numVisitas)
+          VALUES ('$nomUsr','$nom','$app','$apm','$tel','$email',
+          '$pass','')";
+  
+  $db->ejecutaSQL($cadena);
+  echo "<div class='alert alert-success'>Cliente Registrado</div>";
+  
+}catch(PDOException $e){
+  echo "<div class='alert alert-danger'>Cliente no fue registrado</div>";
+}
 
-$cadena = "INSERT INTO cliente(nomUsuarioC,nombresC,apPatC,apMatC,telefonoC,correoC,contraseñaC,numVisitas)
-        VALUES ('$nomUsr','$nom','$app','$apm','$tel','$email',
-        '$pass','')";
-
-$db->ejecutaSQL($cadena);
-
-echo "<div class='alert alert-success'>Cliente Registrado</div>";
 header("refresh:3;../index.php");
 ?>
