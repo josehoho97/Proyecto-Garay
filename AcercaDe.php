@@ -6,7 +6,7 @@
   <?php include "./assets/navbar.php" ?>
   <div class="container">
     <div class="row">
-      <div class="col col-md-8">
+      <div class="col-md-8">
         <h3>Con 21 años al servicio. 19 de junio de 1998</h3>
         <h4>Barquito Morelos, Restaurante de mariscos-ostiones, la cual nuestra primordial labor es generarle el mejor servicio al Cliente.
           <br><br>
@@ -21,8 +21,8 @@
 
         </h4>
       </div>
-      <div class="col col-md-4">
-        <img src="img/local.jpg">
+      <div class="col-md-4 ">
+        <img src="img/local.jpg" class="img-fluid">
       </div>
 
     </div>
