@@ -59,6 +59,44 @@ class Database
 		}
 	}
 
+	function verificaLogin($usuario, $contra)
+    {
+        try{
+         $pase=0;
+         $query="SELECT * FROM usuarios WHERE user='$usuario'";
+         $consulta = $this->PDOLocal->querry($query);
+         
+         while($registro = $consulta->fetch(PDO::FETCH_ASSOC))
+         {
+                if(password_verify($contra, $registro['password']))
+                {
+                    $pase++;
+                }
+         }
+         if($pase >0)
+         {
+             session_start();
+             $_SESSION["usuario"]=$usuario;
+             echo "div class='alert alert-success'>";
+             echo "<h2 align='center'>Bienvenido ".$_SESSION["usuario"]."</h2>";
+             header("refresh:2 ; ../index.php");
+         }
+         else
+         {
+            echo"<div class='alert alert-danger'>";
+            echo"<h2 aling='center'>Usuario o password incorrecto.. </h2>";
+            header("refres:2; ../php/FromLogin.php");
+		 }
+		}
+
+		function cerrarSesion()
+		{
+			session_start();
+			session_destroy();
+			header("Location: ../index.php");
+		}
+	
+
 }
 
 ?>
