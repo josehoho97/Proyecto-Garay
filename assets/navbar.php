@@ -15,19 +15,7 @@
             <li class="nav-item"><a href="AcercaDe.php" class="nav-link blanco">¿Quienes Somos?</a></li>
             <li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>
             <li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle blanco" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Inicio de sesion
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Cliente</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Empleado</a>
-
-                    <a class="dropdown-item" href="#">Administrador</a>
-                </div>
-            </li>
+            <li class="nav-item"><a class="blanco" href="#">Inicio de sesion</a></li>
         </ul>
     </div>
 </div>
