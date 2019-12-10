@@ -1,98 +1,40 @@
+<?php 
+
+class Database{
+    private $host;
+    private $db;
+    private $user;
+    private $password;
+    private $charset;
+
+    function __construct(){
+        $this->host = "localhost";
+        $this->db = "restauranteproyecto";
+        $this->user = "root";
+        $this->password = "";
+        $this->charset = "utf8mb4";
+    }
+    
+    function getConn(){
+        try{
+            $connection = "mysql:host=$this->host; dbname=$this->db; charset=$this->charset;";
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_EMULATE_PREPARES => false
+            ];
+            return new PDO($connection, $this->user, $this->password, $options);   
+        }
+        catch(PDOException $e){
+            print_r('Error connection' . $e->getMessage());
+        }
+    }
+}
+
+?>
+
 <?php
 
-class Database
-{
-	private $PDOLocal;
-	private $user = "root";
-	private $password = "";
-	private $server = "mysql:host=localhost; dbname=restauranteproyecto";
-
-	function conectarBD(){
-		$this->PDOLocal = new PDO($this->server,$this->user,$this->password);
-	}
-
-	function desconectarBD(){
-		try{
-			$this->PDOLocal = null;
-		}
-		catch(PDOException $e){
-			echo $e->getMessage();
-		}
-	}
-
-	function seleccionar($query){
-		try{
-			$resultado = $this->PDOLocal->query($query);
-			$renglon = $resultado->rowCount();
-			if ($renglon > 0) 
-			{
-				while ($row = $resultado->fetch(PDO::FETCH_ASSOC))
-			 	{
-					$Datos[] = $row;
-				}	
-			}
-			else
-			{
-				$Datos[] = null;
-			}
-
-				return $Datos;
-
-		}
-		catch(PDOException $e){
-			echo $e->getMessage();
-		}
-	}
-
-	function ejecutaSQL($query)
-	{
-		try{
-			$this->PDOLocal->query($query);
-		}
-		catch(PDOException $e){
-			echo $e->getMessage();
-		}
-	}
-
-	function verificaLogin($usuario, $contra)
-    {
-        try{
-         $pase=0;
-         $query="SELECT * FROM usuarios WHERE user='$usuario'";
-         $consulta = $this->PDOLocal->querry($query);
-         
-         while($registro = $consulta->fetch(PDO::FETCH_ASSOC))
-         {
-                if(password_verify($contra, $registro['password']))
-                {
-                    $pase++;
-                }
-         }
-         if($pase >0)
-         {
-             session_start();
-             $_SESSION["usuario"]=$usuario;
-             echo "div class='alert alert-success'>";
-             echo "<h2 align='center'>Bienvenido ".$_SESSION["usuario"]."</h2>";
-             header("refresh:2 ; ../index.php");
-         }
-         else
-         {
-            echo"<div class='alert alert-danger'>";
-            echo"<h2 aling='center'>Usuario o password incorrecto.. </h2>";
-            header("refres:2; ../php/FromLogin.php");
-		 }
-		}
-	}
-	
-	function cerrarSesion()
-	{
-		session_start();
-		session_destroy();
-		header("Location: ../index.php");
-	}
-	
-
-}
 
 ?>
