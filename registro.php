@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>El Barquito Morelos</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../vendor/Bootstrap/css/bootstrap.css">
-    <meta name="description" content="Restaurante el barquito torreón, cohuahila.">
-    <link rel="icon" href="logo.png">
-    <style>
-        label {
-            font-style: oblique;
-        }
-    </style>
-</head>
+<?php include "./assets/head.php" ?>
 
 <body>
+    <?php include "./assets/navbar.php" ?>
     <div class="container">
-        <img src="../img/logo.png" class="img-fluid" width="100px">
+        <img src="img/logo.png" class="img-fluid" width="100px">
         <div class="card ">
             <form method="#" action="#">
                 <fieldset>
@@ -52,16 +40,15 @@
                     <input type="password" name="pass" placeholder="Debe tener al menos 6 caracteres" size="30">
                     <h6>La contraseña debe contener al menos seis caracteres.</h6>
                     <br>
-
-
-               
                 </fieldset>
+            </form>
         </div>
     </div>
 
 
-    <script src="../vendor/Jquery/jquery-2.2.4.min.js"></script>
-    <script src="../vendor/Bootstrap/js/bootstrap.min.js"></script>
+    <?php include "./assets/footer.php" ?>
+    <script src="vendor/Jquery/jquery-2.2.4.min.js"></script>
+    <script src="vendor/Bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

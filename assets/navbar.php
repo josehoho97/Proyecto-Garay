@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-md navbar-dark bg-dark ">
-    <a href="index.html" class="navbar-brand"> <img src="img/logo.png" style="width: 40px; margin: 0 20px;">El barquito</a>
+    <a href="index.php" class="navbar-brand"> <img src="img/logo.png" style="width: 40px; margin: 0 20px;">El barquito</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dos" aria-controls="dos" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,9 +11,9 @@
                 }
             </style>
             <li class="nav-item"><a href="index.php" class="nav-link blanco">Inicio</a></li>
-            <li class="nav-item"><a href="menu.html" class="nav-link blanco">Menu</a></li>
-            <li class="nav-item"><a href="AcercaDe.html" class="nav-link blanco">¿Quienes Somos?</a></li>
-            <li class="nav-item"><a href="contacto.html" class="nav-link blanco">Contactos</a></li>
+            <li class="nav-item"><a href="menu.php" class="nav-link blanco">Menu</a></li>
+            <li class="nav-item"><a href="AcercaDe.php" class="nav-link blanco">¿Quienes Somos?</a></li>
+            <li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle blanco" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
