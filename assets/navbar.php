@@ -4,7 +4,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id=dos>
-        <ul class="navbar-nav nav-pills flex-column flex-sm-row">
+        <ul class="navbar-nav nav-pills container-fluid flex-column flex-sm-row">
             <style>
                 .blanco {
                     color: white !important;
@@ -15,12 +15,11 @@
             <li class="nav-item"><a href="AcercaDe.php" class="nav-link blanco">¿Quienes Somos?</a></li>
             <li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>
             <li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>
+        </ul>
+        <ul class="navbar-nav nav-pills flex-column flex-sm-row">
             <li class="nav-item">
-                <a href="#perfil" class="nav-link blanco" tabindex="-1" aria-disabled="true" data-toggle="modal" 
-                data-target="#myModal"><img src=""> Inicio Sesion</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Iniciar Sesion</button>
             </li>
-
-
         </ul>
 
     </div>

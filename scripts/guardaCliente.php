@@ -11,12 +11,15 @@ try {
 
     extract($_POST);
 
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
+
     $cadena = "INSERT INTO cliente(nomUsuarioC, nombresC, apPatC, apMatC, telefonoC, correoC, contraseñaC, numVisitas)
             VALUES ('$nomUsr','$nom','$app','$apm','$tel','$email', '$pass','');";
 
     $stmt = $db->prepare($cadena);
     echo $stmt->execute();
     echo "<div class='alert alert-success'>Cliente Registrado</div>";
+    
 }catch (PDOException $e) {
     echo "<div class='alert alert-danger'>Cliente no fue registrado</div>";
 }
