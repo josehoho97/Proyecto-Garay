@@ -15,7 +15,13 @@
             <li class="nav-item"><a href="AcercaDe.php" class="nav-link blanco">¿Quienes Somos?</a></li>
             <li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>
             <li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>
-            <li class="nav-item"><a href="#" class="nav-link blanco" >Inicio de sesion</a></li>
+            <li class="nav-item">
+                <a href="#perfil" class="nav-link blanco" tabindex="-1" aria-disabled="true" data-toggle="modal" 
+                data-target="#myModal"><img src=""> Inicio Sesion</a>
+            </li>
+
+
         </ul>
+
     </div>
 </div>
