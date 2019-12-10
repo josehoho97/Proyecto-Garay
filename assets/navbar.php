@@ -15,7 +15,7 @@
             <li class="nav-item"><a href="AcercaDe.php" class="nav-link blanco">¿Quienes Somos?</a></li>
             <li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>
             <li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>
-            <li class="nav-item"><a class="blanco" href="#">Inicio de sesion</a></li>
+            <li class="nav-item"><a href="#" class="nav-link blanco" >Inicio de sesion</a></li>
         </ul>
     </div>
 </div>
