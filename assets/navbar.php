@@ -10,7 +10,7 @@
                     color: white !important;
                 }
             </style>
-            <li class="nav-item"><a href="index.html" class="nav-link blanco">Inicio</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link blanco">Inicio</a></li>
             <li class="nav-item"><a href="menu.html" class="nav-link blanco">Menu</a></li>
             <li class="nav-item"><a href="AcercaDe.html" class="nav-link blanco">¿Quienes Somos?</a></li>
             <li class="nav-item"><a href="contacto.html" class="nav-link blanco">Contactos</a></li>
