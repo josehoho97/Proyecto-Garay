@@ -14,6 +14,7 @@
             <li class="nav-item"><a href="menu.php" class="nav-link blanco">Menu</a></li>
             <li class="nav-item"><a href="AcercaDe.php" class="nav-link blanco">¿Quienes Somos?</a></li>
             <li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>
+            <li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle blanco" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
