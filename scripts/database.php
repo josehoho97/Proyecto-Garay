@@ -88,13 +88,14 @@ class Database
             header("refres:2; ../php/FromLogin.php");
 		 }
 		}
-
-		function cerrarSesion()
-		{
-			session_start();
-			session_destroy();
-			header("Location: ../index.php");
-		}
+	}
+	
+	function cerrarSesion()
+	{
+		session_start();
+		session_destroy();
+		header("Location: ../index.php");
+	}
 	
 
 }
