@@ -13,11 +13,11 @@ try {
 
     $pass = password_hash($pass, PASSWORD_DEFAULT);
 
-    $cadena = "INSERT INTO cliente(nomUsuarioC, nombresC, apPatC, apMatC, telefonoC, correoC, contraseñaC, numVisitas)
-            VALUES ('$nomUsr','$nom','$app','$apm','$tel','$email', '$pass','');";
+    $cadena = "INSERT INTO Usuario(nick,nomUsu,apPUsu,apMUsu,correo,pass,telefono,rol) 
+    VALUES ('$nomUsr','$nom','$app','$apm','$email','$pass','$tel','3');";
 
     $stmt = $db->prepare($cadena);
-    echo $stmt->execute();
+    $stmt->execute();
     echo "<div class='alert alert-success'>Cliente Registrado</div>";
     
 }catch (PDOException $e) {

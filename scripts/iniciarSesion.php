@@ -6,19 +6,18 @@
 
         extract($_POST);
 
-        $cadena = "SELECT nomUsuarioC, contraseñaC from cliente where 
-                        nomUsuarioC like '%$usr%' or correoC like'%$usr%'";
+        $cadena = "SELECT nomUsu, rol, pass from Usuario where correo = '$usr'";
 
-        // echo $usr;
-        // echo $pass;
+        //echo $usr;
         $stmt = $db->prepare($cadena);
         $stmt->execute();
         $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if(password_verify($pass, $stmt['contraseñaC'])){
+        if(password_verify($pass, $stmt['pass'])){
             session_start();
-            $_SESSION['usr_nom'] = $stmt['nomUsuarioC'];
+            $_SESSION['usr_nom'] = $stmt['nomUsu'];
+            $_SESSION['rol'] = $stmt['rol'];
             echo "<div class='alert alert-success'>Sesion Iniciada</div>";
+            header("Location:../index.php");
         }else{    
             echo "<div class='alert alert-danger'>Usuario o contraseña incorrecto</div>";
         }

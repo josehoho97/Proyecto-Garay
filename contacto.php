@@ -9,7 +9,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col col-md-8">
+      <div class="col-md-8">
         <br>
         <h3><b>EVENTOS SOCIALES</b></h3>
         <br>
@@ -31,18 +31,15 @@
         </h3>
 
         <h4><b>INFORMACIÓN DE CONTACTO ADICIONAL</b></h4>
-        <h3>
-          morelosbarquito@hotmail.com
-        </h3>
+        <h3>morelosbarquito@hotmail.com</h3>
 
 
       </div>
-      <div class="col col-md-4">
-        <img src="img/local.jpg">
+      <div class="col-md-4">
+        <img src="img/local.jpg" class="img-fluid">
       </div>
-
     </div>
-
+    <br>
     <?php include "./assets/footer.php" ?>
     <script src="vendor/Jquery/jquery-2.2.4.min.js"></script>
     <script src="vendor/Bootstrap/js/bootstrap.min.js"></script>

@@ -9,7 +9,6 @@
     <div class="container">
         <img src="img/inicio2.jpg" class="img-fluid" width="90%">
     </div>
-
     <!-- Footer -->
     <?php include "./assets/footer.php";?>
     <script src="vendor/Jquery/jquery-2.2.4.min.js"></script>
