@@ -14,7 +14,7 @@ try {
     $pass = password_hash($pass, PASSWORD_DEFAULT);
 
     $cadena = "INSERT INTO Usuario(nick,nomUsu,apPUsu,apMUsu,correo,pass,telefono,rol) 
-    VALUES ('$nomUsr','$nom','$app','$apm','$email','$pass','$tel','$rol');";
+    VALUES ('$nomUsr','$nom','$app','$apm','$email','$pass','$tel',$rol);";
 
     $stmt = $db->prepare($cadena);
     $stmt->execute();

@@ -21,6 +21,11 @@
             }
 
             if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 1) {
+                echo '<li class="nav-item"><a href="platillos.php" class="nav-link blanco">Platillos</a></li>';
+                echo '<li class="nav-item"><a href="bebidas.php" class="nav-link blanco">Bebidas</a></li>';
+                echo '<li class="nav-item"><a href="preguntas.php" class="nav-link blanco">Preguntas    </a></li>';
+            }
+            if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 1) {
                 echo '<li class="nav-item"><a href="pedidos.php" class="nav-link blanco">Pedidos</a></li>';
             } else {
                 echo '<li class="nav-item"><a href="menu.php" class="nav-link blanco">Menu</a></li>';
@@ -38,7 +43,7 @@
             ?>
             <?php
             if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 1) {
-                echo '';
+                echo '<li class="nav-item"><a href="platillos.php" class="nav-link blanco">Platillos</a></li>';
             } else {
                 echo '<li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>';
             }
@@ -47,7 +52,7 @@
             
             <?php
             if (isset($_SESSION['usr_nom'])) {
-                echo '<li class="nav-item"><a href="cerrarSesion.php" class="nav-link blanco">Cerrar sesion</a></li>';
+                echo '<li class="nav-item"><a href="cerrarSesion.php" class="nav-link text-danger">Cerrar sesion</a></li>';
             } else {
                 echo '<li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>';
             }
@@ -61,7 +66,7 @@
             </li>
         </ul>';
         } else {
-            echo '<p class="nav-link blanco">Bienvenido ' . $_SESSION['usr_nom'] . '</p>';
+            echo '<p class="nav-link text-warning">Bienvenido ' . $_SESSION['usr_nom'] . '</p>';
         }
         ?>
     </div>

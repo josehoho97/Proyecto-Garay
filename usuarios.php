@@ -22,6 +22,8 @@
                 <img src="img/icons/basura.png">Eliminar Usuarios</a>
         </li>
     </ul>
+
+
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="busqueda" role="tabpanel" aria-labelledby="busqueda-tab">
             <!-- USUARIOS REGISTRADOS-->
@@ -40,7 +42,7 @@
                 $stmt = $db->prepare($cadena);
                 $stmt->execute();
 
-                echo "<table class='table table-dark'>
+                echo "<div class=src><table class='table table-dark'>
                             <thead class='thead-light'>
                               <tr>
                                 <th scope='col'>#</th>
@@ -71,7 +73,7 @@
                               </tr>";
                 }
             } catch (PDOException $e) { }
-            echo "</tbody></table>";
+            echo "</tbody></table></div>";
             ?>
 
         </div>
@@ -124,27 +126,34 @@
                         <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña" required>
                     </div>
                 </div>
-                <div class="form-group row ">
+
+                <div class="form-group row mt-5">
+                    <label for="rol" class="col-sm-2 col-form-label">Tipo de usuario</label>
                     <div class="col-sm-10">
-                        <label for="rol">Tipo de usuarios</label>
-                        <select class="col-sm-10 form-control" id="rol">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                        <select name="rol" id="rol" class="col-sm-10 form-control">
+                            <option value="1">Administrador</option>
+                            <option value="2">Empleado</option>
+                            <option value="3">Cliente</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group row mt-5">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Terminar Registro</button>
                     </div>
                 </div>
 
+                
+
 
             </form>
         </div>
+
         <div class="tab-pane fade" id="configuracion" role="tabpanel" aria-labelledby="configuracion-tab">
+        
+       
+        <!-- DELETE * from usuario WHERE idUsuario = id -->
+        <!-- select idUsuario , nick, nomUsu, apPUsu, rol from usuario -->
             configuracion...
         </div>
     </div>

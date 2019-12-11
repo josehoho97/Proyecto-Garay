@@ -18,7 +18,10 @@ try {
 
     $stmt = $db->prepare($cadena);
     $stmt->execute();
-    echo "<div class='alert alert-success'>Cliente Registrado</div>";
+    echo "
+    <div class='container'>
+        <div class='alert alert-success'><h1 class='display-1'>Registro Exitoso</h1></div>
+    </div>";
     
 }catch (PDOException $e) {
     echo "<div class='alert alert-danger'>Cliente no fue registrado</div>";

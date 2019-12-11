@@ -6,4 +6,9 @@
     <link rel="stylesheet" href="vendor/Bootstrap/css/bootstrap.css">
     <meta name="description" content="Restaurante el barquito torreón, cohuahila.">
     <link rel="icon" href="img/logo.png">
+    <style>
+        .src {
+            overflow: scroll;
+        }
+    </style>
 </head>
