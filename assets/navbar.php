@@ -10,10 +10,15 @@
                     color: white !important;
                 }
             </style>
-            <li class="nav-item"><a href="index.php" class="nav-link blanco">Inicio</a></li>
+            
             <?php
             session_start();
 
+            if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 1) {
+                echo '<li class="nav-item"><a href="usuarios.php" class="nav-link blanco">Usuarios</a></li>';
+            } else {
+                echo '<li class="nav-item"><a href="index.php" class="nav-link blanco">Inicio</a></li>';
+            }
 
             if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 1) {
                 echo '<li class="nav-item"><a href="pedidos.php" class="nav-link blanco">Pedidos</a></li>';

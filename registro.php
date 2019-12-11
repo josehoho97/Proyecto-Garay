@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "./assets/head.php" ?>
+
 <body>
     <?php include "./assets/navbar.php" ?>
     <div class="container">
