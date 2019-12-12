@@ -17,10 +17,7 @@
             <a class="nav-link" id="alta-tab" data-toggle="tab" href="#alta" role="tab" aria-controls="alta" aria-selected="false">
                 <img src="img/icons/contactos.png">Dar Alta Usuarios</a>
         </li>
-        <li class="nav-item nav-link">
-            <a class="nav-link" id="configuracion-tab" data-toggle="tab" href="#configuracion" role="tab" aria-controls="configuracion" aria-selected="false">
-                <img src="img/icons/basura.png">Eliminar Usuarios</a>
-        </li>
+        
     </ul>
 
 
@@ -38,7 +35,7 @@
 
                 extract($_POST);
 
-                $cadena = "SELECT * from usuario";
+                $cadena = "SELECT idUsuario, nick, nomUsu, apPUsu, apMUsu, correo, telefono, rol, nomRol from usuario join roles on idRol = rol";
                 $stmt = $db->prepare($cadena);
                 $stmt->execute();
 
@@ -51,9 +48,10 @@
                                 <th scope='col'>Apellido Paterno</th>
                                 <th scope='col'>Apellido Materno</th>
                                 <th scope='col'>Correo Electronico</th>
-                                <th scope='col'>Contraseña</th>
                                 <th scope='col'>Telefono</th>
                                 <th scope='col'>Rol</th>
+                                <th scope='col'>Eliminar</th>
+                                <th scope='col'>Editar</th>
                               </tr>
                             </thead >
                             <tbody>";
@@ -67,10 +65,11 @@
                                 <td>" . $row['apPUsu'] . "</td>
                                 <td>" . $row['apMUsu'] . "</td>
                                 <td>" . $row['correo'] . "</td>
-                                <td>" . $row['pass'] . "</td>
                                 <td>" . $row['telefono'] . "</td>
-                                <td>" . $row['rol'] . "</td>
-                              </tr>";
+                                <td>" . $row['nomRol'] . "</td>
+                                <td><a href='bajaUsuario.php?id=". $row['idUsuario'] ."'>Eliminar</a></td> 
+                                <td><a href='editarUsuario.php?id=". $row['idUsuario'] ."'>Editar</a></td> 
+                              </tr>"; //.&N=80 para poder mandar otra parametro
                 }
             } catch (PDOException $e) { }
             echo "</tbody></table></div>";
@@ -143,19 +142,10 @@
                     </div>
                 </div>
 
-                
-
-
             </form>
         </div>
 
-        <div class="tab-pane fade" id="configuracion" role="tabpanel" aria-labelledby="configuracion-tab">
         
-       
-        <!-- DELETE * from usuario WHERE idUsuario = id -->
-        <!-- select idUsuario , nick, nomUsu, apPUsu, rol from usuario -->
-            configuracion...
-        </div>
     </div>
 
 

@@ -18,10 +18,6 @@
             <a class="nav-link" id="alta-tab" data-toggle="tab" href="#alta" role="tab" aria-controls="alta" aria-selected="false">
                 <img src="img/icons/apoyo.png">Agregar Nuevos Platillos</a>
         </li>
-        <li class="nav-item nav-link">
-            <a class="nav-link" id="configuracion-tab" data-toggle="tab" href="#configuracion" role="tab" aria-controls="configuracion" aria-selected="false">
-                <img src="img/icons/eliminar.png">Eliminar Platillos</a>
-        </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="busqueda" role="tabpanel" aria-labelledby="busqueda-tab">
@@ -37,7 +33,7 @@
 
                 extract($_POST);
 
-                $cadena = "SELECT * from platillo";
+                $cadena = "SELECT idPlatillo, nomPlatillo, descripcion, precio, tipo, activo, nomTipo from platillo join tipo on idTipo = tipo";
                 $stmt = $db->prepare($cadena);
                 $stmt->execute();
 
@@ -50,6 +46,8 @@
                                 <th scope='col'>Precio</th>
                                 <th scope='col'>Tipo</th>
                                 <th scope='col'>activo</th>
+                                <th scope='col'>Eliminar</th>
+                                <th scope='col'>Modificar</th>
                               </tr>
                             </thead >
                             <tbody>";
@@ -61,8 +59,10 @@
                                 <td>" . $row['nomPlatillo'] . "</td>
                                 <td>" . $row['descripcion'] . "</td>
                                 <td>" . $row['precio'] . "</td>
-                                <td>" . $row['tipo'] . "</td>
+                                <td>" . $row['nomTipo'] . "</td>
                                 <td>" . $row['activo'] . "</td>
+                                <td><a href='". $row['idPlatillo'] ."'>Eliminar</a></td> 
+                                <td><a href='". $row['idPlatillo'] ."'>Editar</a></td> 
                                 
                               </tr>";
                 }
@@ -76,35 +76,35 @@
 
                 <div class="display-4">Registrar Nuevos Platillos</div>
             </div>
-            <form action="scripts/guardarUsuario.php" method="POST" class="p-3 mb-5">
+            <form action="scripts/guardarPlatillo.php" method="POST" class="p-3 mb-5">
                 <div class="form-group row">
-                    <label for="nomUsr" class="col-sm-2 col-form-label">Nombre del platillo</label>
+                    <label for="nomPlatillo" class="col-sm-2 col-form-label">Nombre del platillo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nomUsr" id="nomUsr" placeholder="Nombre del platillo" required>
+                        <input type="text" class="form-control" name="nomPlatillo" id="nomPlatillo" placeholder="Nombre del platillo" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="nom" class="col-sm-2 col-form-label">Descripcion</label>
+                    <label for="descripcion" class="col-sm-2 col-form-label">Descripcion</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nom" id="nom" placeholder="Descripcion del platillo" required>
+                        <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion del platillo" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="app" class="col-sm-2 col-form-label">Precio</label>
+                    <label for="precio" class="col-sm-2 col-form-label">Precio</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="app" id="app" placeholder="Precio del Paterno $$$" required>
+                        <input type="text" class="form-control" name="precio" id="precio" placeholder="Precio del Paterno $$$" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="apm" class="col-sm-2 col-form-label">Tipo del platillo</label>
+                    <label for="nomTipo" class="col-sm-2 col-form-label">Tipo del platillo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="apm" id="apm" placeholder="Tipo de platillo" required>
+                        <input type="text" class="form-control" name="nomTipo" id="nomTipo" placeholder="Tipo de platillo" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="apm" class="col-sm-2 col-form-label">Activo</label>
+                    <label for="activo" class="col-sm-2 col-form-label">Activo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="apm" id="apm" placeholder="Disponibilidad" required>
+                        <input type="text" class="form-control" name="activo" id="activo" placeholder="Disponibilidad" required>
                     </div>
                 </div>
                 <div class="form-group row mt-5">
@@ -114,9 +114,7 @@
                 </div>
             </form>
         </div>
-        <div class="tab-pane fade" id="configuracion" role="tabpanel" aria-labelledby="configuracion-tab">
-            configuracion...
-        </div>
+       
     </div>
 
 
