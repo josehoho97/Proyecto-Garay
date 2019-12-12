@@ -50,7 +50,7 @@
             ?>
 
             <?php
-            if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 2) {
+            if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 3) {
                 
                 echo '<li class="nav-item"><a href="carrito.php" class="nav-link blanco">Carrito</a></li>';
             } else {

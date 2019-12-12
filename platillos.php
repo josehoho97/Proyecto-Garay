@@ -42,7 +42,7 @@
                               <tr>
                                 <th scope='col'>#</th>
                                 <th scope='col'>Nombre de Platillo</th>
-                                <th scope='col'>Descripcion</th>
+                                <th scope='col'>Descripción</th>
                                 <th scope='col'>Precio</th>
                                 <th scope='col'>Tipo</th>
                                 <th scope='col'>activo</th>
@@ -61,8 +61,8 @@
                                 <td>" . $row['precio'] . "</td>
                                 <td>" . $row['nomTipo'] . "</td>
                                 <td>" . $row['activo'] . "</td>
-                                <td><a href='". $row['idPlatillo'] ."'>Eliminar</a></td> 
-                                <td><a href='". $row['idPlatillo'] ."'>Editar</a></td> 
+                                <td><a href='bajaPlatillo.php?id=" . $row['idPlatillo'] . "'>Eliminar</a></td> 
+                                <td><a href='editarPlatillo.php?id=" . $row['idPlatillo'] . "'>Editar</a></td> 
                                 
                               </tr>";
                 }
@@ -73,7 +73,6 @@
         </div>
         <div class="tab-pane fade" id="alta" role="tabpanel" aria-labelledby="alta-tab">
             <div class="row p-3 pt-5 pb-5">
-
                 <div class="display-4">Registrar Nuevos Platillos</div>
             </div>
             <form action="scripts/guardarPlatillo.php" method="POST" class="p-3 mb-5">
@@ -95,10 +94,15 @@
                         <input type="text" class="form-control" name="precio" id="precio" placeholder="Precio del Paterno $$$" required>
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <label for="nomTipo" class="col-sm-2 col-form-label">Tipo del platillo</label>
+                    <label for="tipo" class="col-sm-2 col-form-label">Tipo de platillo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nomTipo" id="nomTipo" placeholder="Tipo de platillo" required>
+                        <select name="tipo" id="tipo" class="col-sm-10 form-control">
+                            <option value="1">Entrada</option>
+                            <option value="2">Plato Fuerte</option>
+                            <option value="3">Postre</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -114,7 +118,7 @@
                 </div>
             </form>
         </div>
-       
+
     </div>
 
 

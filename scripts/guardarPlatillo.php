@@ -12,8 +12,8 @@ try {
     extract($_POST);
 
    
-    $cadena = "INSERT INTO platillo(idPlatillo, nomPlatillo, descripcion, precio, tipo, activo) 
-    VALUES ('$idPlatillo', '$nomPlatillo', '$descripcion', '$precio', '$tipo', '$activo')";
+    $cadena = "INSERT INTO platillo(nomPlatillo, descripcion, precio, tipo, activo) 
+    VALUES ('$nomPlatillo', '$descripcion', '$precio', '$tipo', '$activo')";
     
     $stmt = $db->prepare($cadena);
     $stmt->execute();

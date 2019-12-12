@@ -17,7 +17,7 @@
             <a class="nav-link" id="alta-tab" data-toggle="tab" href="#alta" role="tab" aria-controls="alta" aria-selected="false">
                 <img src="img/icons/contactos.png">Dar Alta Usuarios</a>
         </li>
-        
+
     </ul>
 
 
@@ -67,8 +67,10 @@
                                 <td>" . $row['correo'] . "</td>
                                 <td>" . $row['telefono'] . "</td>
                                 <td>" . $row['nomRol'] . "</td>
-                                <td><a href='bajaUsuario.php?id=". $row['idUsuario'] ."'>Eliminar</a></td> 
-                                <td><a href='editarUsuario.php?id=". $row['idUsuario'] ."'>Editar</a></td> 
+                                <td><a href='bajaUsuario.php?id=" . $row['idUsuario'] . "'>
+                                Eliminar</a></td> 
+                                <td><a href='editarUsuario.php?id=" . $row['idUsuario'] . "'>
+                                Editar</a></td> 
                               </tr>"; //.&N=80 para poder mandar otra parametro
                 }
             } catch (PDOException $e) { }
@@ -78,7 +80,6 @@
         </div>
         <div class="tab-pane fade" id="alta" role="tabpanel" aria-labelledby="alta-tab">
             <div class="row p-3 pt-5 pb-5">
-
                 <div class="display-4">Registrar Usuarios</div>
             </div>
             <form action="scripts/guardarUsuario.php" method="POST" class="p-3 mb-5">
@@ -126,7 +127,8 @@
                     </div>
                 </div>
 
-                <div class="form-group row mt-5">
+                <div class="form-group row ">
+                    <!-- mt-5  -->
                     <label for="rol" class="col-sm-2 col-form-label">Tipo de usuario</label>
                     <div class="col-sm-10">
                         <select name="rol" id="rol" class="col-sm-10 form-control">
@@ -141,11 +143,10 @@
                         <button type="submit" class="btn btn-primary">Terminar Registro</button>
                     </div>
                 </div>
-
             </form>
         </div>
 
-        
+
     </div>
 
 

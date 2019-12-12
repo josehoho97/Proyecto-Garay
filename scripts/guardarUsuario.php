@@ -18,11 +18,11 @@ try {
 
     $stmt = $db->prepare($cadena);
     $stmt->execute();
-    echo "<div class='alert alert-success'>Cliente Registrado</div>";
+    echo "<div class='alert alert-success'>Usuario Registrado</div>";
     
 }catch (PDOException $e) {
-    echo "<div class='alert alert-danger'>Cliente no fue registrado</div>";
+    echo "<div class='alert alert-danger'>No Se Pudo Registrar Este Usuario</div>";
 }
 
-header("refresh:3;../index.php");
+header("refresh:3;../usuarios.php");
 ?>

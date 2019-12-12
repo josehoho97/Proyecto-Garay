@@ -63,7 +63,7 @@ try {
                 <input value='". $row["telefono"] ."'  type='number' class='form-control' name='tel' id='tel' placeholder='Telefono' required>
             </div>
         </div>
-        <div class='form-group row mt-5'>
+        <div class='form-group row'>
             <label for='rol' class='col-sm-2 col-form-label'>Tipo de usuario</label>
             <div class='col-sm-10'>
                 <select name='rol' id='rol' class='col-sm-10 form-control'>
