@@ -51,9 +51,11 @@
 
             <?php
             if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 2) {
-                echo '';
-            } else {
+                
                 echo '<li class="nav-item"><a href="carrito.php" class="nav-link blanco">Carrito</a></li>';
+            } else {
+                echo '';
+                
             }
             ?>
             
