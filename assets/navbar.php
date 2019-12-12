@@ -48,6 +48,14 @@
                 echo '<li class="nav-item"><a href="contacto.php" class="nav-link blanco">Contactos</a></li>';
             }
             ?>
+
+            <?php
+            if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 2) {
+                echo '';
+            } else {
+                echo '<li class="nav-item"><a href="carrito.php" class="nav-link blanco">Carrito</a></li>';
+            }
+            ?>
             
             
             <?php
@@ -55,8 +63,11 @@
                 echo '<li class="nav-item"><a href="cerrarSesion.php" class="nav-link text-danger">Cerrar sesion</a></li>';
             } else {
                 echo '<li class="nav-item"><a href="registro.php" class="nav-link blanco">Registro</a></li>';
-            }
+            }            
             ?>
+
+            
+            
         </ul>
         <?php
         if (!isset($_SESSION['usr_nom'])) {
