@@ -28,7 +28,7 @@
             if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 1) {
                 echo '<li class="nav-item"><a href="pedidos.php" class="nav-link blanco">Pedidos</a></li>';
             } else {
-                echo '<li class="nav-item"><a href="menu.php" class="nav-link blanco">Menu</a></li>';
+                echo '<li class="nav-item"><a href="carrito.php" class="nav-link blanco">Ordenar</a></li>';
             }
 
             ?>
@@ -49,15 +49,7 @@
             }
             ?>
 
-            <?php
-            if (isset($_SESSION['usr_nom']) && $_SESSION['rol'] == 3) {
-                
-                echo '<li class="nav-item"><a href="carrito.php" class="nav-link blanco">Carrito</a></li>';
-            } else {
-                echo '';
-                
-            }
-            ?>
+           
             
             
             <?php

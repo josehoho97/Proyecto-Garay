@@ -11,17 +11,17 @@ try {
 
     extract($_POST);
 
-   
-    $cadena = "INSERT INTO platillo(nomPlatillo, descripcion, precio, tipo, activo) 
-    VALUES ('$nomPlatillo', '$descripcion', '$precio', '$tipo', '$activo')";
+    $cadena = "INSERT INTO bebidas(nomBebida, precio, tipo, activo) 
+    VALUES ('$nomB',$precioB,$tipo,$activo)";
+    
     
     $stmt = $db->prepare($cadena);
     $stmt->execute();
-    echo "<div class='alert alert-success'><h1 class='display-1'>Platillo Registrado</h1></div>";
+    echo "<div class='alert alert-success'><h1 class='display-1'>Bebida Registrada</h1></div>";
     
 }catch (PDOException $e) {
-    echo "<div class='alert alert-danger'>No Se Pudo Registrar El Platillo</div>";
+    echo "<div class='alert alert-danger'>No Se Pudo Registrar La Bebida</div>";
 }
 
-header("refresh:3;../platillos.php");
+header("refresh:3;../bebidas.php");
 ?>

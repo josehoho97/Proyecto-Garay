@@ -6,7 +6,7 @@
 
         extract($_POST);
 
-        $cadena = "SELECT nomUsu, rol, pass from Usuario where correo = '$usr'";
+        $cadena = "SELECT idUsuario, nomUsu, rol, pass from Usuario where correo = '$usr'";
 
         //echo $usr;
         $stmt = $db->prepare($cadena);
@@ -16,6 +16,7 @@
             session_start();
             $_SESSION['usr_nom'] = $stmt['nomUsu'];
             $_SESSION['rol'] = $stmt['rol'];
+            $_SESSION['idUsuario'] = $stmt['idUsuario'];
             echo "<div class='alert alert-success'>Sesion Iniciada</div>";
             header("Location:../index.php");
         }else{    

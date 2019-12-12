@@ -17,10 +17,7 @@
             <a class="nav-link" id="alta-tab" data-toggle="tab" href="#alta" role="tab" aria-controls="alta" aria-selected="false">
                 <img src="img/icons/verificación.png">Agregar Nuevas Bebidas</a>
         </li>
-        <li class="nav-item nav-link">
-            <a class="nav-link" id="configuracion-tab" data-toggle="tab" href="#configuracion" role="tab" aria-controls="configuracion" aria-selected="false">
-                <img src="img/icons/editar.png">Eliminar Bebidas</a>
-        </li>
+      
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="busqueda" role="tabpanel" aria-labelledby="busqueda-tab">
@@ -36,7 +33,7 @@
 
                 extract($_POST);
 
-                $cadena = "SELECT * from bebidas";
+                $cadena = "SELECT idBebida, nomBebida, precio, tipo, activo, nomTipoB from bebidas join tipobebida on idTipoB = tipo";
                 $stmt = $db->prepare($cadena);
                 $stmt->execute();
 
@@ -48,6 +45,8 @@
                                 <th scope='col'>Precio</th>
                                 <th scope='col'>Tipo</th>
                                 <th scope='col'>activo</th>
+                                <th scope='col'>Eliminar</th>
+                                <th scope='col'>Modificar</th>
                               </tr>
                             </thead >
                             <tbody>";
@@ -58,8 +57,10 @@
                                 <th scope='row'>" . $row['idBebida'] . "</th>
                                 <td>" . $row['nomBebida'] . "</td>
                                 <td>" . $row['precio'] . "</td>
-                                <td>" . $row['tipo'] . "</td>
+                                <td>" . $row['nomTipoB'] . "</td>
                                 <td>" . $row['activo'] . "</td>
+                                <td><a href='bajaBebida.php?id=" . $row['idBebida'] . "'>Eliminar</a></td> 
+                                <td><a href='editarBebida.php?id=" . $row['idBebida'] . "'>Editar</a></td> 
                                 
                               </tr>";
                 }
@@ -73,29 +74,33 @@
 
                 <div class="display-4">Registrar Nuevas Bebidas</div>
             </div>
-            <form action="scripts/guardarUsuario.php" method="POST" class="p-3 mb-5">
+            <form action="scripts/guardarBebidas.php" method="POST" class="p-3 mb-5">
                 <div class="form-group row">
-                    <label for="nomUsr" class="col-sm-2 col-form-label">Nombre Bebida</label>
+                    <label for="nomB" class="col-sm-2 col-form-label">Nombre Bebida</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nomUsr" id="nomUsr" placeholder="Nombre del platillo" required>
+                        <input type="text" class="form-control" name="nomB" id="nomB" placeholder="Nombre de la bebida" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="app" class="col-sm-2 col-form-label">Precio</label>
+                    <label for="precioB" class="col-sm-2 col-form-label">Precio</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="app" id="app" placeholder="Precio del Paterno $$$" required>
+                        <input type="text" class="form-control" name="precioB" id="precioB" placeholder="Precio de la bebida" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="apm" class="col-sm-2 col-form-label">Tipo de Bebida</label>
+                    <label for="tipo" class="col-sm-2 col-form-label">Tipo de Bebida</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="apm" id="apm" placeholder="Tipo de platillo" required>
+                        <select name="tipo" id="tipo" class="col-sm-10 form-control">
+                            <option value="1">Normal</option>
+                            <option value="2">Alcohólica</option>
+                           
+                        </select>
                     </div>
-                </div>
+                </div>       
                 <div class="form-group row">
-                    <label for="apm" class="col-sm-2 col-form-label">Activo</label>
+                    <label for="activo" class="col-sm-2 col-form-label">Activo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="apm" id="apm" placeholder="Disponibilidad" required>
+                        <input type="text" class="form-control" name="activo" id="activo" placeholder="Disponibilidad" required>
                     </div>
                 </div>
                 <div class="form-group row mt-5">
@@ -105,9 +110,7 @@
                 </div>
             </form>
         </div>
-        <div class="tab-pane fade" id="configuracion" role="tabpanel" aria-labelledby="configuracion-tab">
-            configuracion...
-        </div>
+        
     </div>
 
 

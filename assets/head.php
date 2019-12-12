@@ -9,6 +9,21 @@
     <style>
         .src {
             overflow: scroll;
+
+        }
+
+        #imgMov {
+            background-color: gray;
+        }
+
+        #imgTamaño {
+            width: 42%;
+            height: 95%;
+        }
+
+        #imgTamaño2 {
+            width: 10%;
+            height: 10%;
         }
     </style>
 </head>
